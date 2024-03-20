@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import About from "../Components/About";
 import Skills from "../Components/Skills";
 import Services from "../Components/Services";
+import Projects from "../Components/Projects";
 const Main = () => {
 
     // User Data
@@ -42,6 +43,9 @@ const Main = () => {
 
             {/* Services */}
             <Services services={userData && userData.services} />
+
+            {/* Projects */}
+            <Projects projects={userData && userData.projects} />
 
         </>
     )
