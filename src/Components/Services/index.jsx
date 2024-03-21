@@ -6,7 +6,7 @@ const Services = ({ services }) => {
                 <div>
                     <div className="md:px-10 px-5">
                         <div>
-                            <h1 className="text-2xl font-bold text-red-600 my-5 mx-10">MY SERVICES</h1>
+                            <h1 className="text-2xl font-bold text-red-600 my-5 text-center">MY SERVICES</h1>
                         </div>
 
                         {/* Services */}
