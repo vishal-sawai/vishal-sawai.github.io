@@ -1,5 +1,6 @@
+//
 const ContactDetail = ({ Icon, title, content }) => (
-    <div className="flex mb-5 lg:mb-10 bg-white py-3 h-28 px-10 border rounded-md">
+    <div className="flex mb-10 bg-white py-3 h-28 px-10 border rounded-md ">
         <div className="my-auto p-5 rounded-full mx-5 shadow-xl">
             <Icon className="text-2xl text-red-600" />
         </div>

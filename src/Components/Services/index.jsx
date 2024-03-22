@@ -1,13 +1,13 @@
 import ServiceItem from "./ServiceItem"
+import Heading from "../Heading"
 const Services = ({ services }) => {
     return (
         <>
-            <div className="bg-gray-50 flex justify-center py-10">
+            <div id="Services" className="bg-gray-50 flex justify-center py-10">
                 <div>
                     <div className="md:px-10 px-5">
-                        <div>
-                            <h1 className="text-2xl font-bold text-red-600 my-5 text-center">MY SERVICES</h1>
-                        </div>
+                        {/* Heading */}
+                        <Heading title="Services" />
 
                         {/* Services */}
                         <div className="mx-auto">

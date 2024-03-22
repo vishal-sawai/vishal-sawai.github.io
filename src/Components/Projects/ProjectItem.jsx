@@ -20,11 +20,11 @@ const ProjectItem = ({ project }) => {
         <>
             <div
                 key={project.id}
-                className="sm:w-96 md:w-full lg:w-96 mx-auto w-full rounded-md my-4 transition duration-300 ease-in-out cursor-pointer rounded-md drop-shadow-2xl	"
+                className="sm:w-96 md:w-full lg:w-96 grow mx-auto w-full rounded-md my-4 transition duration-300 ease-in-out cursor-pointer rounded-md drop-shadow-2xl	"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                <div className=''>
+                <div className='mx-3'>
                     <div className="h-40 md:h-full relative">
                         <img src={project.image.url} alt={project.name} className="w-full h-full object-cover rounded-md" />
                         {isHovered && (

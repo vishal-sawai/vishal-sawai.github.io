@@ -1,12 +1,12 @@
 import SkillItem from "./SkillItem";
+import Heading from "../Heading";
 const Skills = ({ skill }) => {
     return (
         <>
             <div className="pt-10 pb-20 flex justify-center">
                 <div className="md:px-10">
-                    <div>
-                        <h1 className="text-2xl text-center font-bold text-red-600 my-5">MY SKILLS</h1>
-                    </div>
+                    {/* Heading */}
+                    <Heading title="MY SKILLS" />
 
                     {/* Skills */}
                     <div className="w-full">

@@ -3,7 +3,7 @@ import ProfileImage from "../ProfileImage"
 import InfoItem from "./InfoItem"
 const About = ({ profileData }) => {
     return (
-        <div className="bg-gray-50 py-10 lg:h-dvh lg:flex lg:justify-center">
+        <div id="About" className="bg-gray-50 py-10 xl:h-dvh lg:flex lg:justify-center">
             <div className="lg:my-auto flex flex-wrap justify-center mx-5">
 
                 {/* About us Image  */}
