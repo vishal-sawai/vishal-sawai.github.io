@@ -12,7 +12,7 @@ const Services = ({ services }) => {
                         {/* Services */}
                         <div className="mx-auto">
                             {services && services.filter(item => item.enabled).map((item, index) => (
-                                <ServiceItem key={item.id} item={item} />
+                                <ServiceItem key={index} item={item} />
                             ))}
                         </div>
                     </div>

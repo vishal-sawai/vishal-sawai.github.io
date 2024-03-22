@@ -16,6 +16,7 @@ export const Experience = ({ timeline }) => {
                                     startDate={data.startDate}
                                     endDate={data.endDate}
                                     bulletPoints={data.bulletPoints}
+                                    id={data._id}
                                 />
                             </>
                         )

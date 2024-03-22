@@ -19,7 +19,7 @@ const ProjectItem = ({ project }) => {
     return (
         <>
             <div
-                key={project.id}
+                key={project._id}
                 className="sm:w-96 md:w-full lg:w-96 grow mx-auto w-full rounded-md my-4 transition duration-300 ease-in-out cursor-pointer rounded-md drop-shadow-2xl	"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
