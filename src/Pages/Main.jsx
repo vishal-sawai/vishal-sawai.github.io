@@ -7,6 +7,9 @@ import Skills from "../Components/Skills";
 import Services from "../Components/Services";
 import Projects from "../Components/Projects";
 import Resume from "../Components/Resume";
+import Testimonials from "../Components/Testimonials";
+import Contact from "../Components/Contact";
+
 const Main = () => {
 
     // User Data
@@ -50,6 +53,12 @@ const Main = () => {
 
             {/* Resume */}
             <Resume resume={userData && userData.timeline} />
+
+            {/* Testimonials */}
+            <Testimonials testimonials={userData && userData.testimonials} />
+
+            {/* Contact */}
+            <Contact profileData={userData && userData} />
 
         </>
     )
