@@ -1,5 +1,6 @@
 import SkillItem from "./SkillItem";
 import Heading from "../Heading";
+
 const Skills = ({ skill }) => {
     return (
         <>

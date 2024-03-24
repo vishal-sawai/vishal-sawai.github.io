@@ -6,7 +6,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/autoplay';
 import Heading from '../Heading';
 
-import { FreeMode, Pagination } from 'swiper/modules';
+import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
 
 const Testimonials = ({ testimonials }) => {
     return (
@@ -18,10 +18,10 @@ const Testimonials = ({ testimonials }) => {
                         {/* Heading */}
                         <Heading title="Testimonials" />
                         <Swiper
-                            modules={[Pagination, FreeMode]}
+                            modules={[Pagination, FreeMode, Autoplay]}
                             spaceBetween={50}
                             slidesPerView={3}
-                            autoplay={{ delay: 3000 }} // Adjust the delay as needed (in milliseconds)
+                            autoplay={true}
                             pagination={{ clickable: true }}
                             freeMode={true}
                             loop={true}

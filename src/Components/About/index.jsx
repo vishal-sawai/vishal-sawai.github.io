@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom"
 import ProfileImage from "../ProfileImage"
+import { motion } from 'framer-motion';
 import InfoItem from "./InfoItem"
 const About = ({ profileData }) => {
     return (
         <div id="About" className="bg-gray-50 py-10 xl:h-dvh lg:flex lg:justify-center">
-            <div className="lg:my-auto flex flex-wrap justify-center mx-5">
+            <motion.div initial={{ opacity: 0, scale: 0.5 }}
+                transition={{ duration: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+
+                className="lg:my-auto flex flex-wrap justify-center mx-5">
 
                 {/* About us Image  */}
                 <div className="my-auto mx-5">
@@ -29,16 +35,16 @@ const About = ({ profileData }) => {
                             <InfoItem title="Phone" content={profileData && profileData.about.phoneNumber} />
                             <InfoItem title="Email" content={profileData && profileData.email} />
                             <InfoItem title="Address" content={profileData && profileData.about.address} />
-
                         </div>
 
-                        <div className="mt-4">
-                            <Link to="" className="bg-red-500 text-white px-5 py-2 rounded-md hover:bg-red-600 ">DOWNLOAD CV</Link>
-                        </div>
+                        <motion.div whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }} transition={{ duration: 0.5 }} className="mt-5">
+                            <Link to="" className="bg-red-500 text-white px-5 py-2 rounded-md ">DOWNLOAD CV</Link>
+                        </motion.div>
                     </div>
                 </div>
 
-            </div>
+            </motion.div>
         </div >
     )
 }

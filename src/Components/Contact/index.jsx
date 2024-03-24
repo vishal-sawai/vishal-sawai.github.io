@@ -2,6 +2,7 @@ import { FaLocationArrow, FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import ContactDetail from "./ContactDetails";
 import Heading from "../Heading";
+import { motion } from "framer-motion";
 
 
 const Contact = ({ profileData }) => {
@@ -15,7 +16,10 @@ const Contact = ({ profileData }) => {
     ];
     return (
         <>
-            <div id="Contact" className="bg-gray-50 px-2 xl:px-20 py-8">
+            <motion.div initial={{ opacity: 0, scale: 0.5 }}
+                transition={{ duration: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }} id="Contact" className="bg-gray-50 px-2 xl:px-20 py-8">
                 <div>
                     <div className='px-5'>
                         {/* Heading */}
@@ -77,7 +81,7 @@ const Contact = ({ profileData }) => {
                         </div>
                     </div>
                 </div>
-            </div >
+            </motion.div>
         </>
     );
 }

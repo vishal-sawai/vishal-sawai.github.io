@@ -1,5 +1,6 @@
 import ServiceItem from "./ServiceItem"
 import Heading from "../Heading"
+import { motion } from "framer-motion"
 const Services = ({ services }) => {
     return (
         <>
@@ -10,11 +11,19 @@ const Services = ({ services }) => {
                         <Heading title="Services" />
 
                         {/* Services */}
-                        <div className="mx-auto">
+                        <motion.div variants={{
+                            hidden: { opacity: 0 },
+                            show: { opacity: 1, transition: { staggerChildren: 0.50 } },
+                        }}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+
+                            className="mx-auto flex flex-wrap justify-center">
                             {services && services.filter(item => item.enabled).map((item, index) => (
                                 <ServiceItem key={index} item={item} />
                             ))}
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>

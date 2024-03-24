@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ProjectModal from './ProjectModal';
+import { motion } from 'framer-motion';
 
 const ProjectItem = ({ project }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -18,7 +19,10 @@ const ProjectItem = ({ project }) => {
 
     return (
         <>
-            <div
+            <motion.div variants={{
+                hidden: { opacity: 0 },
+                show: { opacity: 1 },
+            }}
                 key={project._id}
                 className="sm:w-96 md:w-full lg:w-96 grow mx-auto w-full rounded-md my-4 transition duration-300 ease-in-out cursor-pointer rounded-md drop-shadow-2xl	"
                 onMouseEnter={() => setIsHovered(true)}
@@ -30,12 +34,14 @@ const ProjectItem = ({ project }) => {
                         {isHovered && (
                             <div className="absolute inset-0 flex flex-col items-center justify-center bg-red-800 bg-opacity-80 rounded-md">
                                 <h1 className="text-lg font-bold text-white uppercase">{project.title}</h1>
-                                <button onClick={handleModal} className="text-base text-white border shadow-2xl px-5 py-2 rounded-md mt-2 hover:bg-white hover:text-gray-500">View Project</button>
+                                <motion.button whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }} onClick={handleModal} className="text-base text-white border shadow-2xl px-5 py-2 rounded-md mt-2 hover:bg-white hover:text-gray-500">View Project
+                                </motion.button>
                             </div>
                         )}
                     </div>
                 </div>
-            </div>
+            </motion.div>
             {showModal && <ProjectModal project={project} handleCloseModal={handleCloseModal} />}
         </>
     );
