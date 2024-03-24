@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import ProjectModal from './ProjectModal';
-import { motion } from 'framer-motion';
-
 const ProjectItem = ({ project }) => {
     const [isHovered, setIsHovered] = useState(false);
     const [showModal, setShowModal] = useState(false);
@@ -19,12 +17,8 @@ const ProjectItem = ({ project }) => {
 
     return (
         <>
-            <motion.div variants={{
-                hidden: { opacity: 0 },
-                show: { opacity: 1 },
-            }}
-                key={project._id}
-                className="sm:w-96 md:w-full lg:w-96 grow mx-auto w-full rounded-md my-4 transition duration-300 ease-in-out cursor-pointer rounded-md drop-shadow-2xl	"
+            <div key={project._id}
+                className="sm:w-96 md:w-full lg:w-96 grow mx-auto w-full rounded-md my-4 transition duration-300 ease-in-out cursor-pointer rounded-md drop-shadow-2xl"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
@@ -41,7 +35,7 @@ const ProjectItem = ({ project }) => {
                         )}
                     </div>
                 </div>
-            </motion.div>
+            </div>
             {showModal && <ProjectModal project={project} handleCloseModal={handleCloseModal} />}
         </>
     );

@@ -26,7 +26,7 @@ const Contact = ({ profileData }) => {
 
     return (
         <>
-            <div id="Contact" className="bg-gray-50 px-2 xl:px-20 py-8 overflow-x-hidden">
+            <div id="Contact" className="bg-gray-50 px-2 xl:px-20 py-10 overflow-x-hidden">
                 <div>
                     <div className='px-5'>
                         {/* Heading */}

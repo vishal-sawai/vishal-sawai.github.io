@@ -1,9 +1,20 @@
 import { useState } from 'react'
+import { motion } from 'framer-motion';
+
 
 const SkillItem = ({ item, key }) => {
     const [isHovered, setIsHovered] = useState(false);
     return (
-        <div key={item.id}
+        <motion.div
+            whileHover={
+                {
+                    scale: 1.1,
+                    transition: {
+                        duration: 0.5
+                    }
+                }
+            }
+            key={item.id}
             className="mx-4 my-4 p-2 bg-gray-100 rounded-full w-[80px] h-[80px] md:w-[110px] md:h-[110px] flex flex-col items-center justify-center relative hover:cursor-pointer shadow-2xl"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -15,7 +26,7 @@ const SkillItem = ({ item, key }) => {
                     <p className="mt-2 text-xl text-white font-bold">{item.percentage}%</p>
                 </div>
             )}
-        </div>
+        </motion.div>
     )
 }
 
