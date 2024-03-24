@@ -3,7 +3,7 @@ import Experience from "./Experience"
 import Heading from "../Heading"
 const index = (resume) => {
     return (
-        <div id="Resume" className="bg-gray-50 flex justify-center py-10">
+        <div id="Resume" className="bg-gray-50 flex justify-center py-10 overflow-x-hidden">
             <div>
                 <div className="md:px-10 px-5">
                     {/* Heading */}

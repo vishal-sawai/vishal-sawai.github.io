@@ -4,7 +4,6 @@ import ContactDetail from "./ContactDetails";
 import Heading from "../Heading";
 import { motion } from "framer-motion";
 
-
 const Contact = ({ profileData }) => {
 
     const { about: { address, phoneNumber } = {}, email } = profileData || {};
@@ -14,12 +13,20 @@ const Contact = ({ profileData }) => {
         { Icon: FaPhoneAlt, title: 'Phone', content: phoneNumber },
         { Icon: MdEmail, title: 'Mail', content: email },
     ];
+
+    const variants = {
+        hidden: { opacity: 0, x: -100 },
+        visible: { opacity: 1, x: 0 },
+    };
+
+    const variantsRight = {
+        hidden: { opacity: 0, x: 100 },
+        visible: { opacity: 1, x: 0 },
+    };
+
     return (
         <>
-            <motion.div initial={{ opacity: 0, scale: 0.5 }}
-                transition={{ duration: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }} id="Contact" className="bg-gray-50 px-2 xl:px-20 py-8">
+            <div id="Contact" className="bg-gray-50 px-2 xl:px-20 py-8 overflow-x-hidden">
                 <div>
                     <div className='px-5'>
                         {/* Heading */}
@@ -30,9 +37,15 @@ const Contact = ({ profileData }) => {
                             <div className="flex flex-wrap justify-center mt-10">
 
                                 {/* Contact Form */}
-                                <div className="flex flex-col justify-center lg:mx-5">
+                                <motion.div
+                                    initial="hidden"
+                                    variants={variants}
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.50 }}
+                                    className="flex flex-col justify-center lg:mx-5" >
                                     <form className="w-full max-w-lg my-auto">
-                                        <div className="flex flex-wrap mx-3 mb-6">
+                                        <div className="flex flex-wrap mx-0 lg:mx-3 mb-6">
                                             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                                                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
                                                     First Name
@@ -46,7 +59,7 @@ const Contact = ({ profileData }) => {
                                                 <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white" id="grid-last-name" type="text" placeholder="Last name" />
                                             </div>
                                         </div>
-                                        <div className="flex flex-wrap mx-3 mb-6">
+                                        <div className="flex flex-wrap mx-0 lg:mx-3 mb-6">
                                             <div className="w-full px-3">
                                                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                                                     E-mail
@@ -54,7 +67,7 @@ const Contact = ({ profileData }) => {
                                                 <input className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-email" type="email" placeholder="Email" />
                                             </div>
                                         </div>
-                                        <div className="flex flex-wrap mx-3 mb-6">
+                                        <div className="flex flex-wrap mx-0 lg:mx-3 mb-6">
                                             <div className="w-full px-3">
                                                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
                                                     Message
@@ -68,20 +81,26 @@ const Contact = ({ profileData }) => {
                                             </div>
                                         </div>
                                     </form>
-                                </div>
+                                </motion.div>
 
                                 {/* contact details*/}
-                                <div className="flex flex-col justify-center mx-5">
+                                <motion.div
+                                    initial="hidden"
+                                    variants={variantsRight}
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5 }}
+                                    className="flex flex-col justify-center mx-5">
                                     {contactDetails.map((detail, index) => (
                                         <ContactDetail key={index} {...detail} />
                                     ))}
-                                </div>
+                                </motion.div>
                             </div>
 
                         </div>
                     </div>
                 </div>
-            </motion.div>
+            </div >
         </>
     );
 }
