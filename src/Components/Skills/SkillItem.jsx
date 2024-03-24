@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion';
 
 
-const SkillItem = ({ item, key }) => {
+const SkillItem = ({ item }) => {
     const [isHovered, setIsHovered] = useState(false);
     return (
         <motion.div

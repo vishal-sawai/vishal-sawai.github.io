@@ -1,7 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import ProjectItem from "./ProjectItem";
 import Heading from "../Heading";
-import { useInView } from 'react-intersection-observer';
 
 const Projects = ({ projects }) => {
     const [techStacks, setTechStacks] = useState([]);
@@ -27,11 +26,6 @@ const Projects = ({ projects }) => {
         //   setting the unique tech stacks with "All" as the first element
         setTechStacks(["All", ...uniqueTechStacks]);
     }, [projects]);
-
-
-    const { ref, inView } = useInView({
-        triggerOnce: true,
-    });
 
     return (
         <div id="Projects" className="flex justify-center py-10">

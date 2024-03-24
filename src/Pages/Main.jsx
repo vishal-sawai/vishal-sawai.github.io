@@ -12,6 +12,21 @@ import Contact from "../Components/Contact";
 
 const Main = () => {
 
+    // Mouse Cursor
+    const [cursorXY, setCursorXY] = useState({ x: -100, y: -100 });
+
+    const moveCursor = (e) => {
+        const { pageX: x, pageY: y } = e;
+        setCursorXY({ x, y });
+    };
+
+    useEffect(() => {
+        document.addEventListener("mousemove", moveCursor);
+        return () => {
+            document.removeEventListener("mousemove", moveCursor);
+        };
+    }, []);
+
     // User Data
     const [userData, setUserData] = useState();
     const [isLoading, setIsLoading] = useState(true);
@@ -48,6 +63,11 @@ const Main = () => {
 
     return (
         <>
+            {/* Cursor */}
+            <div className="cursor" style={{ left: `${cursorXY.x}px`, top: `${cursorXY.y}px` }}>
+                <div className="cursor__circle"></div>
+            </div>
+
             {/* Navbar  */}
             <Navbar
                 name={userData && userData.about.name ? userData.about.name : ''}
