@@ -64,7 +64,7 @@ const Main = () => {
     return (
         <>
             {/* Cursor */}
-            <div className="cursor" style={{ left: `${cursorXY.x}px`, top: `${cursorXY.y}px` }}>
+            <div className="cursor hidden xl:block" style={{ left: `${cursorXY.x}px`, top: `${cursorXY.y}px` }}>
                 <div className="cursor__circle"></div>
             </div>
 
