@@ -37,10 +37,9 @@ const About = ({ profileData }) => {
                             <InfoItem title="Address" content={profileData && profileData.about.address} />
                         </div>
 
-                        <motion.div whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }} transition={{ duration: 0.5 }} className="mt-5">
+                        <div className="mt-5">
                             <Link to="" className="bg-red-500 text-white px-5 py-2 rounded-md ">DOWNLOAD CV</Link>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
 

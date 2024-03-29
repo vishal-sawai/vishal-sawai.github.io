@@ -13,7 +13,7 @@ const Services = ({ services }) => {
                         {/* Services */}
                         <motion.div variants={{
                             hidden: { opacity: 0 },
-                            show: { opacity: 1, transition: { staggerChildren: 0.50 } },
+                            show: { opacity: 1, transition: { staggerChildren: 0.25 } },
                         }}
                             initial="hidden"
                             whileInView="show"

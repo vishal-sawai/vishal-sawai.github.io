@@ -1,7 +1,7 @@
 //
 const ContactDetail = ({ Icon, title, content }) => (
-    <div className="flex mb-10 bg-white py-3 h-28 px-10 border rounded-md w-80 lg:w-full">
-        <div className="my-auto p-5 rounded-full mx-5 shadow-xl">
+    <div className="flex my-4 bg-white py-3 h-28 px-5 border rounded-md grow mx-3 justify-center">
+        <div className="my-auto p-5 rounded-full mx-5">
             <Icon className="text-2xl text-red-600" />
         </div>
         <div className="my-auto">
