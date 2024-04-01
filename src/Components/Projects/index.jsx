@@ -31,7 +31,7 @@ const Projects = ({ projects }) => {
         <div id="Projects" className="flex justify-center py-10">
             <div className="md:px-10 px-5">
                 <Heading title="My Projects" />
-                <div className="flex flex-wrap justify-center mt-10">
+                {/* <div className="flex flex-wrap justify-center mt-10">
                     {techStacks.map((tech, index) => (
                         <button
                             key={index}
@@ -41,8 +41,8 @@ const Projects = ({ projects }) => {
                             {tech}
                         </button>
                     ))}
-                </div>
-                <div className="mx-auto flex flex-wrap w-11/12">
+                </div> */}
+                <div className="mx-auto flex flex-wrap lg:w-11/12">
                     {filteredProjects && filteredProjects.map((project, index) => (
                         <ProjectItem project={project} key={index} />
                     ))}

@@ -2,6 +2,7 @@ import ProfileImage from '../ProfileImage'
 import SocialMediaHandler from '../SocialMediaHandler'
 import { motion } from 'framer-motion';
 
+
 const Home = ({ profileData }) => {
 
     const variants = {
@@ -48,11 +49,11 @@ const Home = ({ profileData }) => {
                         <div className='lg:mt-1'>
                             <h1 className='xl:text-6xl text-2xl font-bold text-gray-600 text-center lg:text-start'>
                                 {profileData && profileData.about.title.split(' ').map((word, index) =>
-                                    word.toLowerCase() === 'software' ?
+                                    (word.toLowerCase() === 'full' || word.toLowerCase() === 'stack') ?
                                         <span key={index} className='text-red-600'>{word} </span> :
                                         <span key={index}>{word} </span>
                                 )}
-                            </h1><p className='xl:text-xl text-lg lg:mr-5 lg:mt-2 mx-5 mt-1 text-gray-500 font-normal text-center mb-5 lg:text-start'>{profileData && profileData.about.subTitle}</p>
+                            </h1><p className='xl:text-lg text-base lg:mr-5 lg:mt-2 mx-5 mt-1 text-gray-500 font-normal text-center mb-5 lg:text-start'>{profileData && profileData.about.subTitle}</p>
                         </div>
                         {/* Social Media Icons */}
                         <div className='flex justify-center lg:justify-start ml-4'>

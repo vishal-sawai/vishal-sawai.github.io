@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import { useWindowScroll } from 'react-use';
 
 
-const Navbar = ({ name }) => {
+const Navbar = ({ name, page }) => {
     const [isOpen, setIsOpen] = useState(false);
     const { y } = useWindowScroll();
 
     const bgColor = y > 70 ? 'bg-gray-800' : 'bg-gray-50';
-    const textColor = y > 70 ? 'text-white' : 'text-gray-800';
+    const textColor = y > 70 ? 'text-white' : 'text-red-500';
     const navColor = y > 70 ? 'text-gray-100' : 'text-gray-500';
 
 
@@ -38,13 +38,13 @@ const Navbar = ({ name }) => {
                         </div>
                         <div className="hidden md:block md:ml-6">
                             <div className="flex space-x-4">
-                                <HashLink to="#Home" className={`${navColor} hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}>Home</HashLink>
-                                <HashLink to="#About" className={`${navColor}  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}>About</HashLink>
-                                <HashLink to="#Services" className={`${navColor}  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}>Services</HashLink>
-                                <HashLink to="#Projects" className={`${navColor}  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}>Projects</HashLink>
-                                <HashLink to="#Resume" className={`${navColor}  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}>Resume</HashLink>
-                                <HashLink to="#Testimonials" className={`${navColor}  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}>Testimonials</HashLink>
-                                <HashLink to="#Contact" className={`${navColor}  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}>Contact</HashLink>
+                                <HashLink to="/home" className={`${navColor} hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}>Home</HashLink>
+                                {page != "Project" && (<>
+                                    <HashLink to="#About" className={`${navColor}  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}>About</HashLink>
+                                    <HashLink to="#Projects" className={`${navColor}  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}>Projects</HashLink>
+                                    <HashLink to="#Contact" className={`${navColor}  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium`}>Contact</HashLink>
+                                </>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -53,13 +53,13 @@ const Navbar = ({ name }) => {
 
             <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`} id="mobile-menu">
                 <div className="px-2 pt-2 pb-3 space-y-1">
-                    <HashLink to="#Home" className={`${navColor} hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`}>Home</HashLink>
-                    <HashLink to="#About" className={`${navColor} text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`}>About</HashLink>
-                    <HashLink to="#Services" className={`${navColor} text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`}>Services</HashLink>
-                    <HashLink to="#Projects" className={`${navColor} text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`}>Projects</HashLink>
-                    <HashLink to="#Resume" className={`${navColor} text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`}>Resume</HashLink>
-                    <HashLink to="#Testimonials" className={`${navColor} text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`}>Testimonials</HashLink>
-                    <HashLink to="#Contact" className={`${navColor} text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`}>Contact</HashLink>
+                    <HashLink to="/home" className={`${navColor} hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`}>Home</HashLink>
+                    {page != "Project" && (<>
+                        <HashLink to="#About" className={`${navColor} text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`}>About</HashLink>
+                        <HashLink to="#Projects" className={`${navColor} text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`}>Projects</HashLink>
+                        <HashLink to="#Contact" className={`${navColor} text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium`}>Contact</HashLink>
+                    </>
+                    )}
                 </div>
             </div>
 
