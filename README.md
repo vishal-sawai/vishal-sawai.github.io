@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 **Portfolio Assignment Readme**
 
 Welcome to my portfolio assignment! This readme file provides an overview of the technologies used, how to set up the project, and other relevant information.
@@ -32,3 +33,6 @@ Welcome to my portfolio assignment! This readme file provides an overview of the
 live
 
 Thank you for visiting my portfolio assignment! 🚀
+=======
+# vishal-sawai.github.io
+>>>>>>> 151aa2f69458884fb955509046e2af6db0e0b03d
