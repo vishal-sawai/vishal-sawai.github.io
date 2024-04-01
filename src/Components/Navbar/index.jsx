@@ -8,9 +8,11 @@ const Navbar = ({ name, page }) => {
     const [isOpen, setIsOpen] = useState(false);
     const { y } = useWindowScroll();
 
-    const bgColor = y > 70 ? 'bg-gray-800' : 'bg-gray-50';
-    const textColor = y > 70 ? 'text-white' : 'text-red-500';
-    const navColor = y > 70 ? 'text-gray-100' : 'text-gray-500';
+    let bgColor = y > 70 ? 'bg-gray-800' : 'bg-gray-50';
+    let textColor = y > 70 ? 'text-white' : 'text-red-500';
+    let navColor = y > 70 ? 'text-gray-100' : 'text-gray-500';
+
+    page === "Project" && (bgColor = 'bg-gray-800') && (textColor = 'text-white') && (navColor = 'text-gray-100');
 
 
     return (
