@@ -195,9 +195,11 @@ export const Api = [
                     "techStack": [
                         "Tailwind CSS",
                         "Javascript",
-                        "Django",
-                        "My SQL",
-                        "Razorpay",
+                        "React JS",
+                        "Redux",
+                        "Node JS",
+                        "Express",
+                        "MongoDB",
                     ],
                     "enabled": true
                 },
@@ -227,7 +229,7 @@ export const Api = [
                 },
                 {
                     "id": "3",
-                    "liveurl": "https://vishalsawai.me/tesla-clone/",
+                    "liveurl": "https://vishalsawai.me/tesla-clone",
                     "githuburl": "https://github.com/vishal-sawai/tesla-clone",
                     "title": "Tesla Web Clone",
                     "image": {
@@ -350,8 +352,8 @@ export const Api = [
                 },
                 {
                     "id": "7",
-                    "liveurl": "#",
-                    "githuburl": "#",
+                    "liveurl": "",
+                    "githuburl": "",
                     "title": "RJ Hostel",
                     "image": {
                         "url": "project media/RJ Hostel/rj1.png"
