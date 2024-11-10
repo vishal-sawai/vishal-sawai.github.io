@@ -1,91 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
+import { skills } from '../content/data';
 
 const Skill = () => {
-    const skills = [
-        {
-            category: 'Languages',
-            icon: '/images/skills/language.png',
-            items: [{
-                name: 'JavaScript',
-                icon: '/images/skills/TechStack/js.webp',
-            }, {
-                name: 'TypeScript',
-                icon: '/images/skills/TechStack/typescript.png',
-            }, {
-                name: 'Python',
-                icon: '/images/skills/TechStack/python.webp',
-            }, {
-                name: 'Java',
-                icon: '/images/skills/TechStack/java.png',
-            }, {
-                name: 'php',
-                icon: '/images/skills/TechStack/php.png',
-            }],
-        },
-        {
-            category: 'Frontend',
-            icon: '/images/skills/frontend.png',
-            items: [{
-                name: 'React.js',
-                icon: '/images/skills/TechStack/react.svg',
-            }, {
-                name: 'Next.js',
-                icon: '/images/skills/TechStack/nextJS.png',
-            }, {
-                name: 'Redux',
-                icon: '/images/skills/TechStack/redux.png',
-            }, {
-                name: 'Tailwind CSS',
-                icon: '/images/skills/TechStack/Tailwind.webp',
-            }, {
-                name: 'Bootstrap',
-                icon: '/images/skills/TechStack/bootstrap.png',
-            }, {
-                name: 'React Native',
-                icon: '/images/skills/TechStack/react Native.png',
-            },
-            {
-                name: 'Framer Motion',
-                icon: '/images/skills/TechStack/framer.svg',
-            }
-            ],
-        },
-        {
-            category: 'Backend',
-            icon: '/images/skills/backend.png',
-            items: [{
-                name: 'Node.js',
-                icon: '/images/skills/TechStack/nodeJs.png',
-            }, {
-                name: 'Express.js',
-                icon: '/images/skills/TechStack/express.png',
-            }, {
-                name: 'Django',
-                icon: '/images/skills/TechStack/django.png',
-            },],
-        },
-        {
-            category: 'Cloud & Database',
-            icon: '/images/skills/cloud.png',
-            items: [{
-                name: 'VPS',
-                icon: '/images/skills/TechStack/vps.png',
-            }, {
-                name: 'CI/CD',
-                icon: '/images/skills/TechStack/cicd.png',
-            }, {
-                name: 'Firebase',
-                icon: '/images/skills/TechStack/firebase.png',
-            }, {
-                name: 'MongoDB',
-                icon: '/images/skills/TechStack/mongoDB.png',
-            }, {
-                name: 'MySQL',
-                icon: '/images/skills/TechStack/sql.png',
-            }],
-        },
-    ];
+
 
     return (
         <div>
