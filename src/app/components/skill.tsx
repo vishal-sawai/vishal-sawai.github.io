@@ -11,7 +11,7 @@ const Skill = () => {
                 <div className="bg-[#171F2E] rounded-lg shadow-cyberpunk">
                     <div className="flex items-center justify-between px-4 py-2 bg-[#1A2332] rounded-t-lg">
                         <div className="text-sm text-[#8892B0]">skills.tsx</div>
-                        <div className="px-2 py-1 text-xs bg-[#233554] rounded text-[#64FFDA]">5+ Years Experience</div>
+                        {/* <div className="px-2 py-1 text-xs bg-[#233554] rounded text-[#64FFDA]">5+ Years Experience</div> */}
                     </div>
                     <div className="p-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

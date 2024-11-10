@@ -223,7 +223,7 @@ export const projectsData = [
 export const skills = [
     {
         category: 'Languages',
-        icon: '..images/skills/language.png',
+        icon: 'images/skills/language.png',
         items: [{
             name: 'JavaScript',
             icon: 'images/skills/TechStack/js.webp',
@@ -243,7 +243,7 @@ export const skills = [
     },
     {
         category: 'Frontend',
-        icon: '..images/skills/frontend.png',
+        icon: 'images/skills/frontend.png',
         items: [{
             name: 'React.js',
             icon: 'images/skills/TechStack/react.svg',
