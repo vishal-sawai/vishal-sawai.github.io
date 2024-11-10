@@ -19,3 +19,94 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+/* Animation */
+@keyframes matrix {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-matrix {
+  animation: matrix 20s linear infinite;
+}
+
+.shadow-cyberpunk {
+  box-shadow: 0 0 20px rgba(100, 255, 218, 0.15);
+}
+
+.shadow-neon {
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+}
+
+.typing-animation {
+  overflow: hidden;
+  border-right: 2px solid #64FFDA;
+  white-space: nowrap;
+  animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: #64FFDA
+  }
+}
+
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #FF6B6B;
+  animation: glitch-1 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: 2px 0 #4CD8C4;
+  animation: glitch-2 2s infinite linear alternate-reverse;
+}
+
+.tech-badge:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.skill-category {
+  transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+}
