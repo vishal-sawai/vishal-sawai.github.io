@@ -63,7 +63,7 @@ const Contact = () => {
             });
         } catch (err) {
             if (err instanceof Yup.ValidationError) {
-                const newErrors: any = {};
+                const newErrors: { [key: string]: string } = {};
                 err.inner.forEach((error) => {
                     if (error.path) {
                         newErrors[error.path] = error.message;
