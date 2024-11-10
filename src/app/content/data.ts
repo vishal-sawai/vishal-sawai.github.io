@@ -285,7 +285,7 @@ export const skills = [
     },
     {
         category: 'Cloud & Database',
-        icon: '..images/skills/cloud.png',
+        icon: 'images/skills/cloud.png',
         items: [{
             name: 'VPS',
             icon: 'images/skills/TechStack/vps.png',
