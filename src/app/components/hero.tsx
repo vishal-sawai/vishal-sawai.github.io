@@ -23,7 +23,7 @@ const Hero = () => {
                             <div className="text-[#64FFDA] flex flex-col md:flex-row items-center gap-8">
                                 <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-[#64FFDA] shadow-neon">
                                     <Image
-                                        src="/Images/profile.jpg"
+                                        src="Images/profile.jpg"
                                         alt="Vishal Sawai"
                                         fill
                                         className="object-cover transform hover:scale-110 transition duration-500 w-full h-full"
@@ -52,7 +52,7 @@ const Hero = () => {
                                     className="text-[#8892B0] hover:text-[#64FFDA] transition-all duration-300"
                                 >
                                     <Image
-                                        src="/Images/x.png"
+                                        src="Images/x.png"
                                         alt="Twitter"
                                         width={34}
                                         height={34}
@@ -65,7 +65,7 @@ const Hero = () => {
                                     className="text-[#8892B0] hover:text-[#64FFDA] transition-all duration-300"
                                 >
                                     <Image
-                                        src="/Images/linkedin.png"
+                                        src="Images/linkedin.png"
                                         alt="LinkedIn"
                                         width={34}
                                         height={34}
@@ -78,7 +78,7 @@ const Hero = () => {
                                     className="text-[#8892B0] hover:text-[#64FFDA] transition-all duration-300"
                                 >
                                     <Image
-                                        src="/Images/github.png"
+                                        src="Images/github.png"
                                         alt="GitHub"
                                         width={34}
                                         height={34}
