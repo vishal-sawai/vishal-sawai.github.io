@@ -1,6 +1,5 @@
 'use client'
 import React, { useRef, useState } from 'react'
-import { useFormik } from "formik";
 import * as Yup from 'yup';
 import emailjs from '@emailjs/browser';
 import { Toaster, toast } from 'react-hot-toast';
@@ -8,14 +7,20 @@ import { Toaster, toast } from 'react-hot-toast';
 const Contact = () => {
     const [isLoading, setIsLoading] = useState(false);
     const form = useRef<HTMLFormElement | null>(null);
-
-    const initialValues = {
+    const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
         email: '',
         phone: '',
         message: '',
-    };
+    });
+    const [errors, setErrors] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: '',
+    });
 
     const validationSchema = Yup.object({
         firstName: Yup.string().min(3).max(20).required("Please enter your first name"),
@@ -25,58 +30,77 @@ const Contact = () => {
         message: Yup.string().min(10).max(500).required("Please enter your message")
     });
 
-    const formik = useFormik({
-        initialValues,
-        validationSchema,
-        onSubmit: async (values, actions) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            await validationSchema.validate(formData, { abortEarly: false });
+            setErrors({
+                firstName: '',
+                lastName: '',
+                email: '',
+                phone: '',
+                message: '',
+            });
             setIsLoading(true);
-            try {
-                await emailjs.sendForm(
-                    'service_a8e3isv',
-                    'template_czb51np',
-                    form.current || '',
-                    'N6jcqnlBvF8iOeGaK'
-                );
-
-                toast.success('Message sent successfully');
-
-                actions.resetForm();
-            } catch {
+            await emailjs.sendForm(
+                'service_a8e3isv',
+                'template_czb51np',
+                form.current || '',
+                'N6jcqnlBvF8iOeGaK'
+            );
+            toast.success('Message sent successfully');
+            setFormData({
+                firstName: '',
+                lastName: '',
+                email: '',
+                phone: '',
+                message: '',
+            });
+        } catch (err) {
+            if (err instanceof Yup.ValidationError) {
+                const newErrors: any = {};
+                err.inner.forEach((error) => {
+                    if (error.path) {
+                        newErrors[error.path] = error.message;
+                    }
+                });
+                setErrors(newErrors);
+            } else {
                 toast.error('Message not sent. Please try again later');
-            } finally {
-                setIsLoading(false);
             }
-        },
-    });
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
     return (
         <div>
-            <Toaster
-                position="top-right"
-                reverseOrder={false}
-            />
+            <Toaster position="top-right" reverseOrder={false} />
             <section id="contact" className="py-10">
                 <div className="bg-[#171F2E] rounded-lg shadow-cyberpunk">
                     <div className="flex items-center px-4 py-2 bg-[#1A2332] rounded-t-lg">
                         <div className="text-sm text-[#8892B0]">contact.tsx</div>
                     </div>
                     <div className="p-6">
-                        <form ref={form} onSubmit={formik.handleSubmit} className="space-y-6">
+                        <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-[#64FFDA] mb-2">const firstName =</label>
                                     <input
                                         type="text"
                                         name="firstName"
-                                        value={formik.values.firstName}
-                                        onChange={formik.handleChange}
-                                        onBlur={formik.handleBlur}
-                                        className={`w-full bg-[#233554] border border-[#2A4163] text-[#64FFDA] px-4 py-2 rounded focus:border-[#64FFDA] focus:ring-1 focus:ring-[#64FFDA] ${formik.touched.firstName && formik.errors.firstName ? 'border-red-500' : ''
-                                            }`}
+                                        value={formData.firstName}
+                                        onChange={handleChange}
+                                        className={`w-full bg-[#233554] border border-[#2A4163] text-[#64FFDA] px-4 py-2 rounded focus:border-[#64FFDA] focus:ring-1 focus:ring-[#64FFDA] ${errors.firstName ? 'border-red-500' : ''}`}
                                         placeholder="'Your First Name'"
                                     />
-                                    {formik.touched.firstName && formik.errors.firstName && (
-                                        <div className="text-red-500 text-sm mt-1">{formik.errors.firstName}</div>
+                                    {errors.firstName && (
+                                        <div className="text-red-500 text-sm mt-1">{errors.firstName}</div>
                                     )}
                                 </div>
                                 <div>
@@ -84,15 +108,13 @@ const Contact = () => {
                                     <input
                                         type="text"
                                         name="lastName"
-                                        value={formik.values.lastName}
-                                        onChange={formik.handleChange}
-                                        onBlur={formik.handleBlur}
-                                        className={`w-full bg-[#233554] border border-[#2A4163] text-[#64FFDA] px-4 py-2 rounded focus:border-[#64FFDA] focus:ring-1 focus:ring-[#64FFDA] ${formik.touched.lastName && formik.errors.lastName ? 'border-red-500' : ''
-                                            }`}
+                                        value={formData.lastName}
+                                        onChange={handleChange}
+                                        className={`w-full bg-[#233554] border border-[#2A4163] text-[#64FFDA] px-4 py-2 rounded focus:border-[#64FFDA] focus:ring-1 focus:ring-[#64FFDA] ${errors.lastName ? 'border-red-500' : ''}`}
                                         placeholder="'Your Last Name'"
                                     />
-                                    {formik.touched.lastName && formik.errors.lastName && (
-                                        <div className="text-red-500 text-sm mt-1">{formik.errors.lastName}</div>
+                                    {errors.lastName && (
+                                        <div className="text-red-500 text-sm mt-1">{errors.lastName}</div>
                                     )}
                                 </div>
                             </div>
@@ -103,15 +125,13 @@ const Contact = () => {
                                     <input
                                         type="email"
                                         name="email"
-                                        value={formik.values.email}
-                                        onChange={formik.handleChange}
-                                        onBlur={formik.handleBlur}
-                                        className={`w-full bg-[#233554] border border-[#2A4163] text-[#64FFDA] px-4 py-2 rounded focus:border-[#64FFDA] focus:ring-1 focus:ring-[#64FFDA] ${formik.touched.email && formik.errors.email ? 'border-red-500' : ''
-                                            }`}
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        className={`w-full bg-[#233554] border border-[#2A4163] text-[#64FFDA] px-4 py-2 rounded focus:border-[#64FFDA] focus:ring-1 focus:ring-[#64FFDA] ${errors.email ? 'border-red-500' : ''}`}
                                         placeholder="'your@email.com'"
                                     />
-                                    {formik.touched.email && formik.errors.email && (
-                                        <div className="text-red-500 text-sm mt-1">{formik.errors.email}</div>
+                                    {errors.email && (
+                                        <div className="text-red-500 text-sm mt-1">{errors.email}</div>
                                     )}
                                 </div>
                                 <div>
@@ -119,15 +139,13 @@ const Contact = () => {
                                     <input
                                         type="tel"
                                         name="phone"
-                                        value={formik.values.phone}
-                                        onChange={formik.handleChange}
-                                        onBlur={formik.handleBlur}
-                                        className={`w-full bg-[#233554] border border-[#2A4163] text-[#64FFDA] px-4 py-2 rounded focus:border-[#64FFDA] focus:ring-1 focus:ring-[#64FFDA] ${formik.touched.phone && formik.errors.phone ? 'border-red-500' : ''
-                                            }`}
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        className={`w-full bg-[#233554] border border-[#2A4163] text-[#64FFDA] px-4 py-2 rounded focus:border-[#64FFDA] focus:ring-1 focus:ring-[#64FFDA] ${errors.phone ? 'border-red-500' : ''}`}
                                         placeholder="'Your Phone Number'"
                                     />
-                                    {formik.touched.phone && formik.errors.phone && (
-                                        <div className="text-red-500 text-sm mt-1">{formik.errors.phone}</div>
+                                    {errors.phone && (
+                                        <div className="text-red-500 text-sm mt-1">{errors.phone}</div>
                                     )}
                                 </div>
                             </div>
@@ -137,15 +155,13 @@ const Contact = () => {
                                 <textarea
                                     name="message"
                                     rows={6}
-                                    value={formik.values.message}
-                                    onChange={formik.handleChange}
-                                    onBlur={formik.handleBlur}
-                                    className={`w-full bg-[#233554] border border-[#2A4163] text-[#64FFDA] px-4 py-2 rounded focus:border-[#64FFDA] focus:ring-1 focus:ring-[#64FFDA] ${formik.touched.message && formik.errors.message ? 'border-red-500' : ''
-                                        }`}
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    className={`w-full bg-[#233554] border border-[#2A4163] text-[#64FFDA] px-4 py-2 rounded focus:border-[#64FFDA] focus:ring-1 focus:ring-[#64FFDA] ${errors.message ? 'border-red-500' : ''}`}
                                     placeholder="'Your message...'"
                                 ></textarea>
-                                {formik.touched.message && formik.errors.message && (
-                                    <div className="text-red-500 text-sm mt-1">{formik.errors.message}</div>
+                                {errors.message && (
+                                    <div className="text-red-500 text-sm mt-1">{errors.message}</div>
                                 )}
                             </div>
 
