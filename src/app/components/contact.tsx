@@ -63,10 +63,16 @@ const Contact = () => {
             });
         } catch (err) {
             if (err instanceof Yup.ValidationError) {
-                const newErrors: { [key: string]: string } = {};
+                const newErrors: { firstName: string; lastName: string; email: string; phone: string; message: string } = {
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    phone: '',
+                    message: '',
+                };
                 err.inner.forEach((error) => {
                     if (error.path) {
-                        newErrors[error.path] = error.message;
+                        newErrors[error.path as keyof typeof newErrors] = error.message;
                     }
                 });
                 setErrors(newErrors);
