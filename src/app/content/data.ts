@@ -229,7 +229,7 @@ export const skills = [
             icon: 'images/skills/TechStack/js.webp',
         }, {
             name: 'TypeScript',
-            icon: 'images/skills/TechStack/typescript.png',
+            icon: 'images/skills/TechStack/TypeScript.png',
         }, {
             name: 'Python',
             icon: 'images/skills/TechStack/python.webp',
