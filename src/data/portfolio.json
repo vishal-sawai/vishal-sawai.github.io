@@ -1,0 +1,262 @@
+{
+  "name": "Vishal sawai",
+  "title": "Full Stack Developer",
+  "email": "vishalsawai17252@gmail.com",
+  "location": "Pune, India",
+  "about": {
+    "intro": "Hi there! I'm a passionate full-stack developer with expertise in modern web and mobile technologies.",
+    "description": "I specialize in building robust and scalable applications with Next JS, React and Node.js ecosystem. With a strong foundation in both frontend and backend development, I create seamless user experiences while ensuring efficient server-side operations."
+  },
+  "social": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/vishal-sawai",
+      "icon": "Github"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/vishal-sawai-5462b9186/",
+      "icon": "Linkedin"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://x.com/vishaldnynasha1",
+      "icon": "Twitter"
+    }
+  ],
+  "skills": {
+    "frontend": [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Redux",
+      "Zustand",
+      "React Native",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Framer Motion"
+    ],
+    "backend": [
+      "Node.js",
+      "Express.js",
+      "REST API",
+      "PHP",
+      "Django"
+    ],
+    "database": [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Firebase",
+      "Prisma"
+    ]
+  },
+  "experience": [
+    {
+      "title": "Software Engineer",
+      "company": "Quoppo Ventures",
+      "period": "Nov 2024 - Present",
+      "description": [
+        "Implemented LiveKit in Mbacraft, an AI-driven interview platform, enabling real-time communication for interviews in Next.js.",
+        "Developed the complete website for Drone Sport India (DSI), optimizing performance and enhancing user engagement.",
+        "Improved the performance of the Kequel website by implementing various optimization techniques.",
+        "Mentored interns, providing guidance on projects and best practices in front-end development.",
+        "Refactored the entire codebase in the Copilot Project by creating a centralized network service for APIs, designing structured interfaces, enforcing ESLint best practices, and actively developing new features.",
+        "Worked on a SaaS platform, contributing to both frontend and backend development, gaining experience in Prisma and PostgreSQL, and integrating a payment gateway for a subscription model."
+      ]
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Golain",
+      "period": " June 2024 – November 2024",
+      "description": [
+        "Developed the company’s new website using React.js, Framer Motion, and Tailwind CSS, delivering a modern and engaging user interface.",
+        "Designed and implemented a secure authentication system for a client, ensuring reliable user access and management.",
+        "Integrated interactive maps into the platform, enhancing data visualization and providing location-based services for improved user engagement.",
+        "Contributed to API integration, facilitating seamless communication between frontend and backend systems.",
+        "Refactored code to improve performance, readability, and scalability, resulting in a more efficient and maintainable platform.",
+        " Made multiple enhancements and updates to the platform, consistently improving functionality and user experience"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "BPSB",
+      "description": "A streamlined housing platform connecting property owners with potential tenants or buyers, simplifying listing, viewing, and management.",
+      "tags": [
+        "React.js",
+        "Redux",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Tailwind CSS",
+        "Framer Motion"
+      ],
+      "image": "https://placehold.co/600x400/1A1A2E/FFFFFF?text=Bharat+Property",
+      "images": [
+        "images/Projects/BSS/1.png",
+        "images/Projects/BSS/2.png",
+        "images/Projects/BSS/3.png",
+        "images/Projects/BSS/4.png",
+        "images/Projects/BSS/5.png",
+        "images/Projects/BSS/6.png",
+        "images/Projects/BSS/7.png",
+        "images/Projects/BSS/8.png",
+        "images/Projects/BSS/9.png",
+        "images/Projects/BSS/10.png",
+        "images/Projects/BSS/11.png",
+        "images/Projects/BSS/12.png",
+        "images/Projects/BSS/13.png",
+        "images/Projects/BSS/14.png",
+        "images/Projects/BSS/15.png",
+        "images/Projects/BSS/16.png"
+      ],
+      "demo": "https://www.bharatpsb.com/",
+      "code": "",
+      "category": "fullstack",
+      "hasSlider": true
+    },
+    {
+      "title": "Job Finder",
+      "description": "Simplifying job searches. It integrates with the Jsearch API to fetch listings from multiple sources. Users can create accounts, log in, and access a wide range of job opportunities.",
+      "tags": [
+        "React Native",
+        "Tailwind CSS",
+        "Firebase",
+        "Rapid API"
+      ],
+      "image": "https://placehold.co/600x400/1A1A2E/FFFFFF?text=Job+Finder",
+      "images": [
+        "images/Projects/JobFinder/jobfinder1.jpg",
+        "images/Projects/JobFinder/jobfinder2.jpg",
+        "images/Projects/JobFinder/jobfinder3.jpg",
+        "images/Projects/JobFinder/jobfinder4.jpg"
+      ],
+      "demo": "",
+      "code": "https://github.com/vishal-sawai/JobFinder",
+      "category": "mobile",
+      "hasSlider": true
+    },
+    {
+      "title": "Tesla Web Clone",
+      "description": "Tesla web clone using React JS and Tailwind CSS",
+      "tags": [
+        "React.js",
+        "Redux",
+        "Styled Components"
+      ],
+      "image": "https://placehold.co/600x400/1A1A2E/FFFFFF?text=Tesla+Clone",
+      "images": [
+        "images/Projects/TeslaWeb/tesla1.png",
+        "images/Projects/TeslaWeb/tesla2.png",
+        "images/Projects/TeslaWeb/tesla3.png",
+        "images/Projects/TeslaWeb/tesla4.png",
+        "images/Projects/TeslaWeb/tesla5.png",
+        "images/Projects/TeslaWeb/tesla6.png",
+        "images/Projects/TeslaWeb/tesla7.png",
+        "images/Projects/TeslaWeb/tesla8.png",
+        "images/Projects/TeslaWeb/tesla9.png",
+        "images/Projects/TeslaWeb/tesla10.png"
+      ],
+      "demo": "https://vishalsawai.me/tesla-clone/",
+      "code": "https://github.com/vishal-sawai/tesla-clone",
+      "category": "frontend",
+      "hasSlider": true
+    },
+    {
+      "title": "Helping Hands",
+      "description": "Helping hand is a fundraising web platform is an online platform that connects individuals and organizations with potential donors to raise funds for various causes, such as charitable donations, medical expenses, educational expenses, and more.",
+      "tags": [
+        "Tailwind CSS",
+        "Django",
+        "MySQL",
+        "Razorpay"
+      ],
+      "image": "https://placehold.co/600x400/1A1A2E/FFFFFF?text=Helping+Hands",
+      "images": [
+        "images/Projects/HelpingHand/1.png",
+        "images/Projects/HelpingHand/2.png",
+        "images/Projects/HelpingHand/3.png",
+        "images/Projects/HelpingHand/4.png",
+        "images/Projects/HelpingHand/5.png",
+        "images/Projects/HelpingHand/6.png",
+        "images/Projects/HelpingHand/7.png",
+        "images/Projects/HelpingHand/8.png",
+        "images/Projects/HelpingHand/9.png",
+        "images/Projects/HelpingHand/10.png",
+        "images/Projects/HelpingHand/11.png",
+        "images/Projects/HelpingHand/12.png"
+      ],
+      "demo": "",
+      "code": "https://github.com/vishal-sawai/Fundraising",
+      "category": "fullstack",
+      "hasSlider": true
+    },
+    {
+      "title": "CNMS",
+      "description": "College Notes Management System is provide an organized platform for teachers to store, manage, and distribute their class notes to students in an efficient and secure manner. With the CNMS, teachers can upload class notes, slides, and other educational materials, and students can easily access and download the materials.",
+      "tags": [
+        "Tailwind CSS",
+        "Java - JSP and Servlet",
+        "MySQL"
+      ],
+      "image": "https://placehold.co/600x400/1A1A2E/FFFFFF?text=CNMS",
+      "images": [
+        "images/Projects/CNMS/1.png",
+        "images/Projects/CNMS/2.png",
+        "images/Projects/CNMS/3.png",
+        "images/Projects/CNMS/4.png",
+        "images/Projects/CNMS/5.png",
+        "images/Projects/CNMS/6.png",
+        "images/Projects/CNMS/7.png",
+        "images/Projects/CNMS/8.png",
+        "images/Projects/CNMS/9.png",
+        "images/Projects/CNMS/10.png",
+        "images/Projects/CNMS/11.png",
+        "images/Projects/CNMS/12.png"
+      ],
+      "demo": "",
+      "code": "https://github.com/vishal-sawai/CNMSeclispe",
+      "category": "fullstack",
+      "hasSlider": true
+    },
+    {
+      "title": "RJ Hostel",
+      "description": "Admin portal, Student portal, Auto receipt, Payment integration, Payment history, online support.",
+      "tags": [
+        "Bootstrap",
+        "PHP",
+        "MySQL",
+        "Razorpay"
+      ],
+      "image": "https://placehold.co/600x400/1A1A2E/FFFFFF?text=RJ+Hostel",
+      "images": [
+        "images/Projects/RJHostel/rj1.png",
+        "images/Projects/RJHostel/rj2.png",
+        "images/Projects/RJHostel/rj3.png",
+        "images/Projects/RJHostel/rj4.png",
+        "images/Projects/RJHostel/rj5.png",
+        "images/Projects/RJHostel/rj6.png",
+        "images/Projects/RJHostel/rj7.png",
+        "images/Projects/RJHostel/rj8.png",
+        "images/Projects/RJHostel/rj9.png",
+        "images/Projects/RJHostel/rj10.png",
+        "images/Projects/RJHostel/rj11.png",
+        "images/Projects/RJHostel/rj12.png",
+        "images/Projects/RJHostel/rj13.png",
+        "images/Projects/RJHostel/rj14.png",
+        "images/Projects/RJHostel/rj15.png",
+        "images/Projects/RJHostel/rj16.png",
+        "images/Projects/RJHostel/rj17.png",
+        "images/Projects/RJHostel/rj18.png",
+        "images/Projects/RJHostel/rj19.png",
+        "images/Projects/RJHostel/rj20.png",
+        "images/Projects/RJHostel/rj21.png"
+      ],
+      "demo": "",
+      "code": "",
+      "category": "fullstack",
+      "hasSlider": true
+    }
+  ]
+}
