@@ -81,6 +81,31 @@
   ],
   "projects": [
     {
+      "title": "Pick Your Plan",
+      "description": "A modern subscription management SaaS application built with Next.js, Tailwind CSS, and Framer Motion.",
+      "tags": [
+        "Next.js",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Context API",
+        "Lucide Icons"
+      ],
+      "image": "images/Projects/PYP/pyp1.webp",
+      "images": [
+        "images/Projects/PYP/pyp1.webp",
+        "images/Projects/PYP/pyp2.webp",
+        "images/Projects/PYP/pyp3.webp",
+        "images/Projects/PYP/pyp4.webp",
+        "images/Projects/PYP/pyp5.webp",
+        "images/Projects/PYP/pyp6.webp",
+        "images/Projects/PYP/pyp7.webp"
+      ],
+      "demo": "https://pick-your-plan.vercel.app/",
+      "code": "https://github.com/vishal-sawai/PickYourPlan",
+      "category": "frontend",
+      "hasSlider": true
+    },
+    {
       "title": "BPSB",
       "description": "A streamlined housing platform connecting property owners with potential tenants or buyers, simplifying listing, viewing, and management.",
       "tags": [
